@@ -1,7 +1,9 @@
-
+import { AppLayout } from "./components/AppLayout"
 
 export const App = () => {
   return (
-    <h1>hej</h1>
+    <>
+      <AppLayout />
+    </>
   )
 }
