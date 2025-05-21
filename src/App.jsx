@@ -1,5 +1,7 @@
+import { MainSection } from "./components/MainSection"
+
 export const App = () => {
   return (
-    <h1>React Boilerplate</h1>
+    <MainSection />
   )
 }
