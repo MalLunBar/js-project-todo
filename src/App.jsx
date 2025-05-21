@@ -1,7 +1,7 @@
-import { MainSection } from "./components/MainSection"
+
 
 export const App = () => {
   return (
-    <MainSection />
+    <h1>hej</h1>
   )
 }
