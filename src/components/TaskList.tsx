@@ -10,7 +10,7 @@ export const TaskList = () => {
 
   return (
 
-    <ul className="mt-4 flex flex-col gap-3 w-full max-w-full">
+    <ul className="mt-4 flex flex-col gap-3 w-full max-w-full sm:max-w-[450px] sm:mx-auto sm:mt-10">
       {tasks.map((task) => (
         <li key={task.id} className="flex items-center gap-3">
           <input
@@ -19,7 +19,7 @@ export const TaskList = () => {
             onChange={() => toggleTask(task.id)}
             className="w-5 h-5 accent-black"
           />
-          <div className="bg-white rounded-xl p-2 flex items-start justify-between w-full">
+          <div className="bg-white text-lg rounded-xl p-2 flex items-start justify-between w-full">
             <p className={`flex-1 break-words whitespace-pre-wrap ${task.completed ? "line-through text-gray-400" : ""}`}>
               {task.text}
             </p>
@@ -28,7 +28,7 @@ export const TaskList = () => {
               <img
                 src="/assets/set.png"
                 alt="Delete task"
-                className="w-5 h-5 object-contain" />
+                className="w-5 h-5 sm:w-6 sm:h-6 object-contain" />
             </button>
           </div>
         </li>
