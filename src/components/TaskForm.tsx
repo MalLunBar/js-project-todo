@@ -15,25 +15,26 @@ export const TaskForm = () => {
   };
 
   return (
-    <form 
-      onSubmit={handleSubmit} 
+    <form
+      onSubmit={handleSubmit}
       className="flex gap-2">
-      
-      <input 
+
+      <input
         type="checkbox"
         checked={checked}
-         />
+        onChange={(e => setChecked(e.target.checked))}
+      />
       <input
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         className="border rounded p-2 flex-grow"
-        placeholder="Add a new task..."
+        placeholder="Write a task..."
       />
-      <button 
-        type="submit" 
+      <button
+        type="submit"
         className="bg-blue-500 text-white rounded p-2">
-        Done
+        Save
       </button>
     </form>
   )
