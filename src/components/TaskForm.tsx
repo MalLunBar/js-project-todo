@@ -1,39 +1,55 @@
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useTaskStore } from "../stores/useTaskStore"
 
 type TaskFormProps = {
   onClose: () => void
 }
 
+
 export const TaskForm = ({ onClose }: TaskFormProps) => {
   const [text, setText] = useState("")
   const [checked, setChecked] = useState(false)
+  const [error, setError] = useState("")
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
   const addTask = useTaskStore((state) => state.addTask)
 
+  useEffect(() => {
+    textareaRef.current?.focus();
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (text.trim() === "") return
+    if (text.trim() === "") {
+      setError("Please enter a task")
+      textareaRef.current?.focus()
+      return
+    }
     addTask(text)
     setText("")
     setChecked(false)
     onClose()
 
   };
-
+  
   return (
+  
 
     <form
       onSubmit={handleSubmit}
-      className="flex gap-2">
+      className="flex flex-col gap-2">
 
       <div className="mt-2 flex bg-white rounded-[15px] shadow-md max-w[400px mx-auto">
-
+        <label htmlFor="task-input" className="sr-only">Task text</label>
         <textarea
-          autoFocus
+          id="task-input"
+          aria-describedby={error ? "task-error" : undefined}
+          ref={textareaRef}
           rows={1}
           value={text}
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e) => {
+            setText(e.target.value)
+            if (error) setError("")
+          }}
           className="focus:outline-none p-2"
           placeholder="Write a task..."
           onInput={(e) => {
@@ -41,6 +57,7 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
             e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`; // Grow with content
           }}
         />
+
         <div className="flex flex-col justify-between gap-4 items-end p-2">
 
           <button
@@ -57,6 +74,9 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
           </button>
         </div>
       </div>
+      {error && <p 
+        id="task-error"
+        className="text-red-500 bg-white px-3 font-bold text-sm mt-1 mx-2 rounded-lg">{error}</p>}
     </form>
 
   )
