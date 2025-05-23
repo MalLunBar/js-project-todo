@@ -38,7 +38,7 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
       onSubmit={handleSubmit}
       className="flex flex-col gap-2">
 
-      <div className="mt-2 flex bg-white rounded-[15px] shadow-md max-w[400px mx-auto">
+      <div className="mt-2 flex justify-between bg-white rounded-[15px] mx-auto sm:w-[450px] sm:h-[100px]">
         <label htmlFor="task-input" className="sr-only">Task text</label>
         <textarea
           id="task-input"
@@ -69,14 +69,14 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
 
           <button
             type="submit"
-            className="rounded-xl py-1 px-2 bg-[#FFDEA6]">
+            className="font-medium rounded-2xl py-1 px-2 bg-[#FFDEA6] sm:py-2 sm:px-4 hover:bg-[#FFC116] sm:text-lg">
             Done
           </button>
         </div>
       </div>
       {error && <p 
         id="task-error"
-        className="text-red-500 bg-white px-3 font-bold text-sm mt-1 mx-2 rounded-lg">{error}</p>}
+        className="text-red-500 bg-white px-3 font-bold text-sm mt-1 mx-2 rounded-lg sm:text-base">{error}</p>}
     </form>
 
   )

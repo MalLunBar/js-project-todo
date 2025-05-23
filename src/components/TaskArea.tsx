@@ -14,7 +14,7 @@ export const TaskArea = () => {
   const noTasksYet = tasks.length === 0
 
   return (
-    <div className="flex flex-col gap-2 bg-[url(/assets/note-backgorund-smaller.jpg)] bg-cover bg-no-repeat bg-center h-screen w-full rounded-[20px] px-3 py-4">
+    <div className="flex flex-col gap-2 bg-[url(/assets/note-background-smaller.jpg)] bg-cover bg-no-repeat bg-center h-screen w-full rounded-[20px] px-3 py-4 sm:bg-[url(/assets/note-background.jpg)]">
       <div className="flex justify-between items-center">
       <TaskButtons
         text="New Task +"

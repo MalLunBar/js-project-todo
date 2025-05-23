@@ -11,9 +11,9 @@ export const HeroMessage = () => {
           src="../assets/user.png" alt="User"
           className="w-6 h-auto" />
       </header>
-      <div className="flex flex-col-reverse px-13 py-10">
-        <h1 className="font-medium text-2xl">From Clutter to <span className="text-[#FFC116]">Done</span> with Done-ly</h1>
-        <p className="font-light text-base">Make it simple</p>
+      <div className="flex flex-col-reverse px-13 py-10 sm:py-20 sm:px-26">
+        <h1 className="font-medium text-2xl sm:text-5xl">From Clutter to <span className="text-[#FFC116]">Done</span> with Done-ly</h1>
+        <p className="font-light text-base sm:text-xl">Make it simple</p>
 
       </div>
     </>
