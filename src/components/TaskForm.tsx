@@ -9,7 +9,7 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
   const [text, setText] = useState("")
   const [checked, setChecked] = useState(false)
   const addTask = useTaskStore((state) => state.addTask)
-  
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -18,7 +18,7 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
     setText("")
     setChecked(false)
     onClose()
-    
+
   };
 
   return (
@@ -27,10 +27,9 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
       onSubmit={handleSubmit}
       className="flex gap-2">
 
-    
-      <div className="flex bg-white rounded-[15px] shadow-md max-w[400px mx-auto">
+      <div className="mt-2 flex bg-white rounded-[15px] shadow-md max-w[400px mx-auto">
 
-        <textarea 
+        <textarea
           autoFocus
           rows={1}
           value={text}
@@ -46,14 +45,15 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
 
           <button
             type="button"
-            className="bg-red-500 text-white rounded p-2">
-          
+            className="bg-red-500 text-white rounded p-2"
+            onClick={onClose}>
+
           </button>
 
           <button
             type="submit"
-            className="bg-blue-500 text-white rounded p-2">
-            Save
+            className="rounded-xl py-1 px-2 bg-[#FFDEA6]">
+            Done
           </button>
         </div>
       </div>
