@@ -26,6 +26,11 @@ export const useTaskStore = create<TaskStore>()(
       }
       set((state) => ({ tasks: [...state.tasks, newTask] }))
     },
+    removeTask: (id: string) => {
+      set((state) => ({
+        tasks: state.tasks.filter((task) => task.id !== id),
+      }))
+    },
   }))
 )
 
