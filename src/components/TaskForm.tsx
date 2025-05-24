@@ -50,7 +50,7 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
             setText(e.target.value)
             if (error) setError("")
           }}
-          className="focus:outline-none p-2"
+          className="focus:outline-none p-2 resize-none mx-auto sm:w-[450px] sm:h-[100px]"
           placeholder="Write a task..."
           onInput={(e) => {
             e.currentTarget.style.height = 'auto'; // Reset height
