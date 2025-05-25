@@ -14,7 +14,7 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
   const addTask = useTaskStore((state) => state.addTask)
 
   useEffect(() => {
-    textareaRef.current?.focus();
+    textareaRef.current?.focus()
   }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -28,11 +28,9 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
     setText("")
     setChecked(false)
     onClose()
-
-  };
+  }
 
   return (
-
 
     <form
       onSubmit={handleSubmit}
@@ -53,8 +51,8 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
           className="focus:outline-none p-2 resize-none mx-auto sm:w-[450px] sm:h-[100px]"
           placeholder="Write a task..."
           onInput={(e) => {
-            e.currentTarget.style.height = 'auto'; // Reset height
-            e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`; // Grow with content
+            e.currentTarget.style.height = "auto"
+            e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`
           }}
         />
 

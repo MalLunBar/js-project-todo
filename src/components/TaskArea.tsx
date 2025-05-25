@@ -28,7 +28,6 @@ export const TaskArea = () => {
           onClick={() => setShowForm(true)}
         />
 
-
         {tasks.length > 0 && (
           <div className="flex flex-col gap-1 ">
             {["all", "completed", "uncompleted"].map((type) => (
@@ -63,7 +62,6 @@ export const TaskArea = () => {
           </div>
         )
       }
-
     </div >
   )
 }
