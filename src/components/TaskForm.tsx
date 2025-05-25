@@ -30,15 +30,15 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
     onClose()
 
   };
-  
+
   return (
-  
+
 
     <form
       onSubmit={handleSubmit}
       className="flex flex-col gap-2">
 
-      <div className="mt-2 flex justify-between bg-white rounded-[15px] mx-auto sm:w-[450px] sm:h-[100px]">
+      <div className="mt-2 flex justify-between bg-white rounded-[15px] mx-auto sm:w-[450px] sm:h-[120px]">
         <label htmlFor="task-input" className="sr-only">Task text</label>
         <textarea
           id="task-input"
@@ -62,9 +62,12 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
 
           <button
             type="button"
-            className="bg-red-500 text-white rounded p-2"
+            className="rounded p-2"
             onClick={onClose}>
-
+            <img
+              src="/assets/close.png"
+              alt="Close"
+              className="w-4 h-4 object-contain" />
           </button>
 
           <button
@@ -74,7 +77,7 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
           </button>
         </div>
       </div>
-      {error && <p 
+      {error && <p
         id="task-error"
         className="text-red-500 bg-white px-3 font-bold text-sm mt-1 mx-2 rounded-lg sm:text-base">{error}</p>}
     </form>
