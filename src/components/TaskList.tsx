@@ -3,8 +3,8 @@ import { format } from 'date-fns'
 
 
 
-export const TaskList = () => {
-  const tasks = useTaskStore((state) => state.tasks)
+export const TaskList = ({tasks}) => {
+  
   const removeTask = useTaskStore((state) => state.removeTask)
   const toggleTask = useTaskStore((state) => state.toggleTask)
 
