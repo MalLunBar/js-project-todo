@@ -11,7 +11,7 @@ export const TaskButtons = ({ text, onClick }: TaskButtonsProps) => {
     <>
       <button
         type="button"
-        className="bg-white px-3 py-1 rounded-[20px] font-medium hover:bg-[#FFDEA6] sm:text-lg"
+        className="bg-white px-3 py-1 rounded-[20px] font-medium max-w-40 hover:bg-[#FFDEA6] sm:text-lg"
         onClick={onClick}>
         {text}
       </button>

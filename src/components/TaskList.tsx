@@ -1,9 +1,12 @@
 import { useTaskStore } from "../stores/useTaskStore"
 import { format } from 'date-fns'
+import { Task } from "../stores/useTaskStore"
 
+interface TaskListProps {
+  tasks: Task[];
+}
 
-
-export const TaskList = ({tasks}) => {
+export const TaskList: React.FC<TaskListProps> = ({ tasks }) => {
   
   const removeTask = useTaskStore((state) => state.removeTask)
   const toggleTask = useTaskStore((state) => state.toggleTask)

@@ -10,9 +10,9 @@ export const TaskCount = () => {
   )
 
   return (
-    <div className="bg-white opacity-90 p-4 rounded-2xl mt-4 text-black mx-auto text-center font-semibold">
-      <p>Completed: {completedTasks}</p>
-      <p>Left: {uncompletedTasks}</p>
+    <div className="bg-white px-3 py-1 rounded-lg mt-8 text-black mx-auto text-center font-semibold">
+      <p>Completed: {completedTasks}/{totalTasks}</p>
+      
     </div>
   )
 
