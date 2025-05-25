@@ -28,20 +28,20 @@ export const TaskArea = () => {
           onClick={() => setShowForm(true)}
         />
 
-        
-          {tasks.length > 0 && (
-            <div className="flex flex-col gap-1 ">
-              {["all", "completed", "uncompleted"].map((type) => (
-                <button
-                  key={type}
-                  onClick={() => setFilter(type as "all" | "completed" | "uncompleted")}
-                  className={`px-2 py-1 rounded-2xl ${filter === type ? "bg-violet-400 text-white" : "bg-white text-black"}`}
-                >
-                  {type}
-                </button>
-              ))}
-            </div>
-          )}
+
+        {tasks.length > 0 && (
+          <div className="flex flex-col gap-1 ">
+            {["all", "completed", "uncompleted"].map((type) => (
+              <button
+                key={type}
+                onClick={() => setFilter(type as "all" | "completed" | "uncompleted")}
+                className={`px-2 py-1 rounded-2xl ${filter === type ? "bg-violet-400 text-white" : "bg-white text-black"}`}
+              >
+                {type}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
 
@@ -56,7 +56,9 @@ export const TaskArea = () => {
       {
         filteredTasks.length > 0 && (
           <div className="flex flex-col items-center">
-            <TaskList tasks={filteredTasks} />
+            <div className="scrollbar-always-show max-h-[60vh] w-full px-1">
+              <TaskList tasks={filteredTasks} />
+            </div>
             <TaskCount />
           </div>
         )

@@ -5,3 +5,15 @@
   background-color: #EDEBEB;
   
 }
+
+/* Force scrollbars to always show */
+.scrollbar-always-show {
+  overflow-y: scroll;
+  scrollbar-width: auto; /* Firefox */
+  scrollbar-color: #888 #EDEBEB; /* Firefox */
+}
+
+.scrollbar-always-show::-webkit-scrollbar {
+  display: block; /* Chrome/Safari */
+  
+}

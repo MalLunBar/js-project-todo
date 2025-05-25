@@ -14,7 +14,7 @@ export const TaskList: React.FC<TaskListProps> = ({ tasks }) => {
 
   return (
 
-    <ul className="mt-4 flex flex-col gap-3 px-2 max-w-[500px] sm:mt-10">
+    <ul className="flex flex-col gap-3 px-2 max-w-[600px] ">
       {tasks.map((task) => (
       <li key={task.id} className="flex items-center gap-3">
         <input
