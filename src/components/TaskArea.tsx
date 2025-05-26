@@ -20,7 +20,7 @@ export const TaskArea = () => {
   })
 
   return (
-    <div className="flex flex-col gap-10 bg-[url(/assets/note-background-smaller.jpg)] bg-cover bg-no-repeat bg-center h-screen w-full rounded-[20px] px-3 py-4 sm:bg-[url(/assets/note-background.jpg)]">
+    <div className="flex flex-col gap-10 bg-[url(/assets/note-background-smaller.webp)] bg-cover bg-no-repeat bg-center h-screen w-full rounded-[20px] px-3 py-4 sm:bg-[url(/assets/note-background.webp)]">
 
       <div className="flex justify-between items-start">
         <TaskButtons
