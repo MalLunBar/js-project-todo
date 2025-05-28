@@ -36,7 +36,7 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
       onSubmit={handleSubmit}
       className="flex flex-col gap-2">
 
-      <div className="mt-2 flex justify-between bg-white rounded-[15px] mx-auto sm:w-[450px] sm:h-[120px]">
+      <div className="mt-2 flex justify-between bg-white rounded-[15px] mx-auto sm:w-[450px]">
         <label htmlFor="task-input" className="sr-only">Task text</label>
         <textarea
           id="task-input"
@@ -48,7 +48,7 @@ export const TaskForm = ({ onClose }: TaskFormProps) => {
             setText(e.target.value)
             if (error) setError("")
           }}
-          className="focus:outline-none p-2 resize-none mx-auto sm:w-[450px] sm:h-[100px]"
+          className="focus:outline-none p-2 resize-none mx-auto sm:w-[450px]"
           placeholder="Write a task..."
           onInput={(e) => {
             e.currentTarget.style.height = "auto"
